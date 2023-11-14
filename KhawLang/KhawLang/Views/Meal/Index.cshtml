@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KhawLang.Models.Product>
+﻿@model IEnumerable<KhawLang.Models.Meal>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -25,7 +25,13 @@
                 @Html.DisplayNameFor(model => model.Amount)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                Tags
             </th>
             <th></th>
         </tr>
@@ -43,11 +49,25 @@
                 @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
                 <img src="@Url.Content(item.Image)" width="150px" height="150px" style="object-fit: cover ;border-radius : 10px"/>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                @if (item.Tags != null) {
+                    foreach (var tag in item.Tags) {
+                        <span class="badge badge-primary">@tag</span>
+                    }
+                }
+                else {
+                    <span>No tags available</span><br>
+                }
+                @Html.DisplayFor(modelItem => item.TagsInput)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MealId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.MealId">Delete</a>
             </td>
         </tr>
 }

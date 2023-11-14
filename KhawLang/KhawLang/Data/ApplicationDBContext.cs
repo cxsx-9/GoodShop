@@ -25,12 +25,12 @@ namespace KhawLang.Data
 		{
 			
 		}
-		public DbSet<Product> Products { get; set; } // ตัวแทนตารางที่เก็บข้อมูล การเข้าถึงข้อมูลต้องผ่านตัวนี้
+		public DbSet<Meal> Meals { get; set; } // ตัวแทนตารางที่เก็บข้อมูล การเข้าถึงข้อมูลต้องผ่านตัวนี้
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>()
-                .Property(p => p.ProductId)
+            modelBuilder.Entity<Meal>()
+                .Property(p => p.MealId)
                 .ValueGeneratedOnAdd();
         }
 	}

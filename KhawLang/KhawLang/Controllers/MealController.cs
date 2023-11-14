@@ -13,17 +13,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KhawLang.Controllers
 {
-    public class ProductController : Controller
+    public class MealController : Controller
     {
         private readonly ApplicationDBContext _db;
-        public ProductController( ApplicationDBContext db)
+        public MealController( ApplicationDBContext db)
         {
             _db = db;
         }
         public IActionResult Index()
         {
-            IEnumerable<Product> allProducts = _db.Products;
-            return View(allProducts);
+            IEnumerable<Meal> allMeals = _db.Meals;
+            return View(allMeals);
         }
         public IActionResult Create()
         {
@@ -32,10 +32,23 @@ namespace KhawLang.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Product Prodobj)
+        public IActionResult Create(Meal Item)
         {
-            _db.Products.Add(Prodobj);
+            // Item.Tags = Item.TagsInput?.Split(',').Select(tag => tag.Trim()).ToList();
+            if (!string.IsNullOrEmpty(Item.TagsInput))
+            {
+                List<string> tagsArray = Item.TagsInput.Split(',').Select(tag => tag.Trim()).ToList();
+                Item.Tags = tagsArray;
+                Console.WriteLine("Tags: " + string.Join(", ", Item.Tags)); // debug
+            }
+            else
+            {
+                Console.WriteLine("Cerate a new one without data."); // debug
+                Item.Tags = new List<string>();
+            }
+            _db.Meals.Add(Item);
             _db.SaveChanges();
+            Console.WriteLine("Meal created successfully."); // debug
             return RedirectToAction(nameof(Index));
         }
 
@@ -45,7 +58,7 @@ namespace KhawLang.Controllers
             {
                 return NotFound();
             }
-            var cusdb = _db.Products.Find(Id);
+            var cusdb = _db.Meals.Find(Id);
 
             if (cusdb == null)
             {
@@ -56,43 +69,43 @@ namespace KhawLang.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Product Prodobj)
+        public IActionResult Edit(Meal Item)
         {
             if (ModelState.IsValid)
             {
-                _db.Products.Update(Prodobj);
+                _db.Meals.Update(Item);
                 _db.SaveChanges();
                 TempData["ResultOk"] = "Data Updated Successfully !";
                 return RedirectToAction("Index");
             }
-            return View(Prodobj);
+            return View(Item);
         }
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _db.Products == null)
+            if (id == null || _db.Meals == null)
                 return NotFound();
-            var ProdDb = await _db.Products.FirstOrDefaultAsync(m => m.ProductId == id);
-            if (ProdDb == null)
+            var mealDb = await _db.Meals.FirstOrDefaultAsync(m => m.MealId == id);
+            if (mealDb == null)
                 return NotFound();
-            return View(ProdDb);
+            return View(mealDb);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_db.Products == null)
-                return Problem("Entity set 'ApplicationDBContext.Products'  is null.");
-            var prod = await _db.Products.FindAsync(id);
-            if (prod != null)
-                _db.Products.Remove(prod);
+            if (_db.Meals == null)
+                return Problem("Entity set 'ApplicationDBContext.Meals'  is null.");
+            var meal = await _db.Meals.FindAsync(id);
+            if (meal != null)
+                _db.Meals.Remove(meal);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        private bool ProductExists (int id)
+        private bool MealExists (int id)
         {
-            return (_db.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+            return (_db.Meals?.Any(e => e.MealId == id)).GetValueOrDefault();
         }
     }
 }

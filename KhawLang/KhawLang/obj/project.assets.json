@@ -2969,11 +2969,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/KhawLang.csproj",
+      "projectUniqueName": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/Goodshop/KhawLang/KhawLang/KhawLang.csproj",
       "projectName": "KhawLang",
-      "projectPath": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/KhawLang.csproj",
+      "projectPath": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/Goodshop/KhawLang/KhawLang/KhawLang.csproj",
       "packagesPath": "/Users/csantivimol/.nuget/packages/",
-      "outputPath": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/obj/",
+      "outputPath": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/Goodshop/KhawLang/KhawLang/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/csantivimol/.nuget/NuGet/NuGet.Config"

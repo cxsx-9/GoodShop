@@ -1,0 +1,71 @@
+@model Meal
+@{
+    ViewData["Title"] = "Create";
+}
+
+@* for tag *@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Bootstrap Tagsinput CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap Tagsinput JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+<style>
+	.label-info
+	{
+		background-color: #666699;
+		padding: 1px;
+		border-radius: 4px;
+	}
+</style>
+
+<h1 class="text-center">Create Meal</h1>
+<form method="post" asp-controller="Meal" asp-action="Create">
+    @* <div class="form-group">
+        <label asp-for="MealId"></label>
+        <input type="int" asp-for="MealId" class="form-control"/>
+    </div> *@
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="Text" asp-for="Name" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input type="int" asp-for="Price" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input type="int" asp-for="Amount" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input type="Text" asp-for="Description" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input type="text" asp-for="Image" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tags"></label>
+        <input asp-for="TagsInput" class="form-control" data-role="tagsinput" />
+        <small id="tagsHelp" class="form-text text-muted">Enter tags separated by commas (e.g., tag1, tag2, tag3).</small>
+    </div>
+    <script>
+    $(document).ready(function () {
+        $('input[data-role="tagsinput"]').tagsinput({
+            confirmKeys: [13, 44, 32]  // Enter, comma, and space keys trigger tag confirmation
+        });
+    });
+    </script>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

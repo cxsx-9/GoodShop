@@ -1,4 +1,4 @@
-@model KhawLang.Models.Product
+@model KhawLang.Models.Meal
 
 @{
     ViewData["Title"] = "Delete";
@@ -28,6 +28,11 @@
             @Html.DisplayFor(model => model.Amount)
         </dd>
 
+        <dt class = "col-sm-2"> @Html.DisplayNameFor(model => model.Description) </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
         <dt class = "col-sm-2"> @Html.DisplayNameFor(model => model.Image) </dt>
         <dd class = "col-sm-10">
             @* @Html.DisplayFor(model => model.Image) *@
@@ -36,7 +41,7 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="ProductId" />
+        <input type="hidden" asp-for="MealId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to Our Product</a>
     </form>
