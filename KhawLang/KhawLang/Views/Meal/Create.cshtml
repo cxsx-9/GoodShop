@@ -24,11 +24,10 @@
 </style>
 
 <h1 class="text-center">Create Meal</h1>
+<td>
+    <button type="button" class="btn btn-outline-primary"><a asp-action="Index">back</a></button>
+</td>
 <form method="post" asp-controller="Meal" asp-action="Create">
-    @* <div class="form-group">
-        <label asp-for="MealId"></label>
-        <input type="int" asp-for="MealId" class="form-control"/>
-    </div> *@
 
     <div class="form-group">
         <label asp-for="Name"></label>
@@ -46,8 +45,10 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Description"></label>
-        <input type="Text" asp-for="Description" class="form-control"/>
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        @* <label asp-for="Description"></label> *@
+        @* <input type="Text" asp-for="Description" class="form-control"/> *@
     </div>
 
     <div class="form-group">
@@ -55,17 +56,21 @@
         <input type="text" asp-for="Image" class="form-control"/>
     </div>
     <div class="form-group">
-        <label asp-for="Tags"></label>
-        <input asp-for="TagsInput" class="form-control" data-role="tagsinput" />
-        <small id="tagsHelp" class="form-text text-muted">Enter tags separated by commas (e.g., tag1, tag2, tag3).</small>
+        <label>Tags</label><br />
+         @if (ViewBag.Tags != null)
+        {
+            @foreach (var tag in ViewBag.Tags)
+            {
+                <label>
+                    <input type="checkbox" name="selectedTags" value="@tag.TagId" />
+                    @tag.Name
+                </label>
+            }
+        }
+        else {
+            <span>No tags available</span><br>
+        }
     </div>
-    <script>
-    $(document).ready(function () {
-        $('input[data-role="tagsinput"]').tagsinput({
-            confirmKeys: [13, 44, 32]  // Enter, comma, and space keys trigger tag confirmation
-        });
-    });
-    </script>
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>

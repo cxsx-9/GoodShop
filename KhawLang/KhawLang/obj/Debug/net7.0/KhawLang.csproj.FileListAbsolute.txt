@@ -73,5 +73,3 @@
 /Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/obj/Debug/net7.0/KhawLang.csproj.CopyComplete
-/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/bin/Debug/net7.0/Npgsql.dll
-/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll

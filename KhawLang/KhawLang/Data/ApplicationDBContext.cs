@@ -6,32 +6,23 @@ using System.Data.SqlClient;
 
 namespace KhawLang.Data
 {
-	public static class PostgreSqlDemoDbContextConfigurer
-	{
-
-	}
 	public class ApplicationDBContext : DbContext
 	{
-		public void Configure(DbContextOptionsBuilder<ApplicationDBContext> builder, string connectionString)
-		{
-			builder.UseNpgsql(connectionString);
-		}
-
-		public void Configure(DbContextOptionsBuilder<ApplicationDBContext> builder, DbConnection connection)
-		{
-			builder.UseNpgsql(connection);
-		}
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) :base(options)
 		{
 			
 		}
-		public DbSet<Meal> Meals { get; set; } // ตัวแทนตารางที่เก็บข้อมูล การเข้าถึงข้อมูลต้องผ่านตัวนี้
-
+		// for fix one to one
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Meal>()
-                .Property(p => p.MealId)
-                .ValueGeneratedOnAdd();
+            modelBuilder.Entity<Customer>()
+                .HasOne(c => c.CartInfo)
+                .WithOne(c => c.Customer)
+                .HasForeignKey<Cart>(c => c.CustomerID);
+            base.OnModelCreating(modelBuilder);
         }
+		public DbSet<Meal> Meals { get; set; }
+		public DbSet<Tag> Tags { get; set; }
+		public DbSet<MealTag> MealTags { get; set; }
 	}
 }

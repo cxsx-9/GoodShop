@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TTSdex5oDIrnN1b3cQ1mzxHH30iVa1MHiQg7s2gOtJuZZtIEvP+W3BgTyCyviO6jSy5lQMXAG2tdMb3iPrpB4g==",
+  "dgSpecHash": "SOVLogYQ4wHl60rTa3cqGbs+hfDc3qtPws2zqdAY6isywU1o1IiB6VOrSPZYZW9NKj2CWtyMfSFHj3LCJgSQ5g==",
   "success": true,
   "projectFilePath": "/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/KhawLang.csproj",
   "expectedPackageFiles": [
@@ -9,8 +9,8 @@
     "/Users/csantivimol/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
-    "/Users/csantivimol/.nuget/packages/microsoft.data.sqlclient/5.1.1/microsoft.data.sqlclient.5.1.1.nupkg.sha512",
-    "/Users/csantivimol/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.0/microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
+    "/Users/csantivimol/.nuget/packages/microsoft.data.sqlclient/5.1.2/microsoft.data.sqlclient.5.1.2.nupkg.sha512",
+    "/Users/csantivimol/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.entityframeworkcore/7.0.13/microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.13/microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.13/microsoft.entityframeworkcore.analyzers.7.0.13.nupkg.sha512",
@@ -41,8 +41,6 @@
     "/Users/csantivimol/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
-    "/Users/csantivimol/.nuget/packages/npgsql/7.0.6/npgsql.7.0.6.nupkg.sha512",
-    "/Users/csantivimol/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.11/npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/system.configuration.configurationmanager/6.0.1/system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "/Users/csantivimol/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

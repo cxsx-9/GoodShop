@@ -28,16 +28,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/CreateTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9DcmVhdGVUYWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/DeleteTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9EZWxldGVUYWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/EditTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9FZGl0VGFnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/IndexMeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9JbmRleE1lYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Meal/IndexTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbC9JbmRleFRhZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/csantivimol/Work/KMUTT/3-1/CMM349/GoodShop/KhawLang/KhawLang/Views/Shared/Error.cshtml]

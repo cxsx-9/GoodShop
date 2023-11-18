@@ -1,0 +1,44 @@
+@model IEnumerable<KhawLang.Models.Tag>
+
+<h2>Tag</h2>
+<p>
+</p>
+<tr>
+    <td>
+        <button type="button" class="btn btn-outline-primary"><a asp-action="Index">back</a></button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-outline-primary"><a asp-action="CreateTag">Create</a></button>
+    </td>
+</tr>
+<!-- Display existing tags -->
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tag in Model)
+            {
+                <tr>
+                    <td>@tag.TagId</td>
+                    <td>@tag.Name</td>
+                    <td>
+                        <a asp-action="EditTag" asp-route-id="@tag.TagId">Edit</a>
+                        <a asp-action="DeleteTag" asp-route-id="@tag.TagId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No tags available.</p>
+}
+
+<hr />

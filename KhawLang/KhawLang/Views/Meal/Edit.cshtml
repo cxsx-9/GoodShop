@@ -3,27 +3,10 @@
 	ViewData["Title"] = "Edit";
 }
 
-@* for tag *@
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!-- Bootstrap Tagsinput CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
-<!-- Bootstrap JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Bootstrap Tagsinput JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
-<style>
-	.label-info
-	{
-		background-color: #666699;
-		padding: 1px;
-		border-radius: 4px;
-	}
-</style>
-
 <h1 class="text-center">EDIT</h1>
+<td>
+	<button type="button" class="btn btn-outline-primary"><a asp-action="Index">Back</a></button>
+</td>
 <div class="row">
 	<div class="col-md-4">
 		<form method="post" asp-controller="Meal" asp-action="Edit">
@@ -46,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label asp-for="Description" class="control-label"></label>
-				<input asp-for="Description" class="form-control" />
+				<textarea asp-for="Description" class="form-control" rows="4"></textarea>
 				<span asp-validation-for="Description" class="text-danger"></span>
 			</div>
 			<div class="form-group">
@@ -54,22 +37,19 @@
 				<input asp-for="Image" class="form-control" />
 				<span asp-validation-for="Image" class="text-danger"></span>
 			</div>
-		    <div class="form-group">
-				<label asp-for="Tags"></label>
-				<input asp-for="TagsInput" class="form-control" data-role="tagsinput" />
-				<small id="tagsHelp" class="form-text text-muted">Enter tags separated by commas (e.g., tag1, tag2, tag3).</small>
-			</div>
-			<script>
-			$(document).ready(function () {
-				$('input[data-role="tagsinput"]').tagsinput({
-					confirmKeys: [13, 44, 32]  // Enter, comma, and space keys trigger tag confirmation
-				});
-			});
-			</script>
-			<br />
-			<div class="form-group">
-				<button type="submit" class="btn btn-warning">Save</button>
-			</div>
+				<div class="form-group">
+					<label>Select Tags</label><br />
+					@foreach (var tag in ViewBag.Tags)
+					{
+						<label>
+							<input type="checkbox" name="selectedTags" value="@tag.TagId" 
+								@(Model.Tags != null && Model.Tags.Any(t => t.TagId == tag.TagId) ? "checked" : "") />
+							@tag.Name
+						</label>
+					}
+				</div>
+			<br/>
+			<button type="submit" class="btn btn-primary">Save Changes</button>
 		</form>
 	</div>
 </div>

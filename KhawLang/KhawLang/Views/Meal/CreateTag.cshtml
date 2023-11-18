@@ -1,0 +1,16 @@
+@model Tag
+@{
+    ViewData["Title"] = "Tag";
+}
+
+<h1 class="text-center">Create Tag</h1>
+<td>
+    <button type="button" class="btn btn-outline-primary"><a asp-action="IndexTag">back</a></button>
+</td>
+<form method="post" asp-controller="Meal" asp-action="CreateTag">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="Text" asp-for="Name" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
